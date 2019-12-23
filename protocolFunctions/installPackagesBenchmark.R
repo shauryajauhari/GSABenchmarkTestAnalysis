@@ -13,6 +13,6 @@ installPackagesBenchmark <- function(){
   library(seq2pathway)
   library(chipenrich)
   
-  ## For making maximum memory available to R session. 
+  ## For making maximum memory available to R session (for MS Windows only).
   memory.size(max = TRUE)
 }

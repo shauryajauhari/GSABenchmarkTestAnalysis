@@ -28,6 +28,8 @@ dataImportClean <- function(){
     
     samplesInBED <- GRangesList(samplesInBED)
     names(samplesInBED) <- ChIPSeqSamples
+    saveRDS(samplesInBED, "samplesInBED.rds")
+    saveRDS(ChIPSeqSamples, "ChIPSeqSamples.rds")
 }
 
 
