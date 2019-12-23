@@ -1,0 +1,2 @@
+Max_genes = 1000
+Genome = hg38
