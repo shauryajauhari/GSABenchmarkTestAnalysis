@@ -1,14 +1,15 @@
-dataImportClean <- function(){
+dataImportClean <- function(loc){
   
     ### Importing the master table ###
     
     setwd(".")
     proj_set()
-    ChIPSeqDataMaster <- read.csv (file = "GSAChIPSeqBenchmarkDatasetProfile.txt", sep = '\t', header = TRUE, quote = "")
-    
+
     ## The following code creates a list of samples for which we need to extract the BED files for.
     
-    ChIPSeqSamples<-as.character(ChIPSeqDataMaster$GSM)
+    
+    ChIPSeqSamples <- list.files(loc) # Extracting files from the input directory.
+    ChIPSeqSamples <- substr(ChIPSeqSamples,1,nchar(ChIPSeqSamples)-4) # Clipping file extension to retrieve sample names only.
     
     ## Initializing list for storing BED files and the consecutive GRanges objects.
     
@@ -16,7 +17,7 @@ dataImportClean <- function(){
     
     for(i in 1:length(ChIPSeqSamples))
     {
-      samplesInBED[[i]] <- read.table(paste0("./testData/",paste0(eval(parse(text="ChIPSeqSamples[i]")),".bed")), sep = "\t", header = FALSE)
+      samplesInBED[[i]] <- read.table(paste0(loc,paste0(eval(parse(text="ChIPSeqSamples[i]")),".bed")), sep = "\t", header = FALSE)
       samplesInBED[[i]] <- samplesInBED[[i]][,1:3]
       colnames(samplesInBED[[i]]) <- c("chrom", "start", "end")
       samplesInBED[[i]] <- samplesInBED[[i]][order(samplesInBED[[i]]$chrom),]
