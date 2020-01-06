@@ -41,6 +41,7 @@ for (i in 1:length(ChIPSeqSamples))
   regeneratedSamples[[i]] <- read_bed(paste0(loc,paste0(eval(parse(text="ChIPSeqSamples[i]")),".bed")))
   seq2pathwayResults[[i]] <- seq2pathwayRun(regeneratedSamples[[i]])
 }
+system("mkdir ./results/Seq2pathway")
 saveRDS(seq2pathwayResults, file = "./results/Seq2pathway/seq2pathwayResults")
 rm(seq2pathwayResults)
 
@@ -50,6 +51,7 @@ for (i in 1:length(ChIPSeqSamples))
 {
   chipenrichResults[[i]] <- chipenrichRun(paste0(loc,paste0(eval(parse(text="ChIPSeqSamples[i]")),".bed")))
 }
+system("mkdir ./results/Chipenrich")
 saveRDS(chipenrichResults, file = "./results/Chipenrich/chipenrichResults")
 rm(chipenrichResults)
 
@@ -59,6 +61,7 @@ for (i in 1:length(ChIPSeqSamples))
 {
   broadenrichResults[[i]] <- broadenrichRun(paste0(loc,paste0(eval(parse(text="ChIPSeqSamples[i]")),".bed")))
 }
+system("mkdir ./results/Broadenrich")
 saveRDS(broadenrichResults, file = "./results/Broadenrich/broadenrichResults")
 rm(broadenrichResults)
 }
