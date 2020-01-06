@@ -2,32 +2,63 @@ executeChipenrichBroadenrichSeq2pathway <- function(loc){
 ## Testing individual data in benchmark dataset with each GSA tool package
 ## Also, since several of the tools don't acknowledge the mitochondrial DNA ("chrMT") entries have to be removed from the BED files.
 
-regenerated_samples <- list()
-seq2pathway_results <- list()
+regeneratedSamples <- list()
 
+
+## This module holds the individual executives for the tools in question
+## Seq2pathway
+
+seq2pathwayRun <- function(x){
+  results <- list()
+  results [[i]] <- runseq2pathway(x, genome = "hg19")
+  return(results)
+}
+
+
+## Chipenrich
+
+chipenrichRun <- function(x){
+  results <- list()
+  results [[i]] <- chipenrich(peaks = x, out_name = NULL, genesets = c("GOBP", "GOCC", "GOMF", "kegg_pathway"), genome = "hg19", qc_plots = FALSE, n_cores = 1)
+  return(results)
+}
+
+
+## Broadenrich
+
+broadenrichRun <- function(x){
+  results <- list()
+  results [[i]] <- broadenrich(peaks = x, out_name = NULL, genesets = c("GOBP", "GOCC", "GOMF", "kegg_pathway"), genome = "hg19", qc_plots = FALSE, n_cores = 1)
+  return(results)
+}
+
+
+## Execution
+
+seq2pathwayResults <- list()
 for (i in 1:length(ChIPSeqSamples))
 {
-  regenerated_samples[[i]] <- read_bed(paste0(loc,paste0(eval(parse(text="ChIPSeqSamples[i]")),".bed")))
-  seq2pathway_results[[i]] <- seq2pathway_run(regenerated_samples[[i]])
+  regeneratedSamples[[i]] <- read_bed(paste0(loc,paste0(eval(parse(text="ChIPSeqSamples[i]")),".bed")))
+  seq2pathwayResults[[i]] <- seq2pathwayRun(regeneratedSamples[[i]])
 }
-saveRDS(seq2pathway_results, file = "./results/Seq2pathway/seq2pathway_results")
-rm(seq2pathway_results)
+saveRDS(seq2pathwayResults, file = "./results/Seq2pathway/seq2pathwayResults")
+rm(seq2pathwayResults)
 
 
-chipenrich_results <- list()
+chipenrichResults <- list()
 for (i in 1:length(ChIPSeqSamples))
 {
-  chipenrich_results[[i]] <- chipenrich_run(paste0(loc,paste0(eval(parse(text="ChIPSeqSamples[i]")),".bed")))
+  chipenrichResults[[i]] <- chipenrichRun(paste0(loc,paste0(eval(parse(text="ChIPSeqSamples[i]")),".bed")))
 }
-saveRDS(chipenrich_results, file = "./results/Chipenrich/chipenrich_results")
-rm(chipenrich_results)
+saveRDS(chipenrichResults, file = "./results/Chipenrich/chipenrichResults")
+rm(chipenrichResults)
 
 
-broadenrich_results <- list()
+broadenrichResults <- list()
 for (i in 1:length(ChIPSeqSamples))
 {
-  broadenrich_results[[i]] <- broadenrich_run(paste0(loc,paste0(eval(parse(text="ChIPSeqSamples[i]")),".bed")))
+  broadenrichResults[[i]] <- broadenrichRun(paste0(loc,paste0(eval(parse(text="ChIPSeqSamples[i]")),".bed")))
 }
-saveRDS(broadenrich_results, file = "./results/Broadenrich/broadenrich_results")
-rm(broadenrich_results)
+saveRDS(broadenrichResults, file = "./results/Broadenrich/broadenrichResults")
+rm(broadenrichResults)
 }
