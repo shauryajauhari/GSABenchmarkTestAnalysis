@@ -1,4 +1,4 @@
-diseaseGOTerms <- function(){
+diseaseTerms <- function(){
 ## GO Terms
   
 ## Import the manually downloaded GO terms (as a text file) from geneontology.org associated with each of the four
