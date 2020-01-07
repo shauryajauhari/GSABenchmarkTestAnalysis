@@ -9,7 +9,7 @@ broadenrichResultsShredded <- list()
 broadenrichResults <- readRDS("./results/Broadenrich/broadenrichResults")
 for( i in 1:length(broadenrichResults))
 {
-  broadenrichResultsShredded[[i]] <- broadenrichResults[[i]]$results[,c(2,4)]
+  broadenrichResultsShredded[[i]] <- broadenrichResults[[i]][[i]]$results[,c(2,4)]
   
 }
 names(broadenrichResultsShredded) <- as.character(ChIPSeqSamples)
@@ -20,9 +20,9 @@ rm(broadenrichResults)
 
 chipenrichResultsShredded <- list()
 chipenrichResults <- readRDS("./results/Chipenrich/chipenrichResults")
-for( i in 1:length(chipenrich_results))
+for( i in 1:length(chipenrichResults))
 {
-  chipenrichResultsShredded[[i]] <- chipenrichResults[[i]]$results[,c(2,4)]
+  chipenrichResultsShredded[[i]] <- chipenrichResults[[i]][[i]]$results[,c(2,4)]
   
 }
 names(chipenrichResultsShredded) <- as.character(ChIPSeqSamples)
@@ -37,7 +37,7 @@ seq2pathwayResults <- readRDS("./results/Seq2pathway/seq2pathwayResults")
 
 for (i in 1:length(seq2pathwayResults))
 {
-  seq2pathwayResultsShredded[[i]] <- seq2pathwayResults[[i]]$gene2pathway_result.FET$GO_BP[,c(1,3)]  
+  seq2pathwayResultsShredded[[i]] <- seq2pathwayResults[[i]][[i]]$gene2pathway_result.FET$GO_BP[,c(1,3)]  
 }
 names(seq2pathwayResultsShredded)<- as.character(ChIPSeqSamples)
 saveRDS(seq2pathwayResultsShredded, file = "./results/Seq2pathway/seq2pathwayResultsShredded")
