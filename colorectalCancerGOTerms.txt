@@ -1,0 +1,125 @@
+GO:0097259      20-aldehyde-leukotriene B4 20-monooxygenase activity
+GO:0045517      interleukin-20 receptor binding
+GO:0045544      gibberellin 20-oxidase activity
+GO:0030876      interleukin-20 receptor complex
+GO:0004501      ecdysone 20-monooxygenase activity
+GO:0042015      interleukin-20 binding
+GO:0042016      interleukin-20 receptor activity
+GO:0042237      interleukin-20 biosynthetic process
+GO:0072618      interleukin-20 secretion
+GO:0032624      interleukin-20 production
+GO:0032664      regulation of interleukin-20 production
+GO:0050051      leukotriene-B4 20-monooxygenase activity
+GO:0050052      leukotriene-E4 20-monooxygenase activity
+GO:0045387      regulation of interleukin-20 biosynthetic process
+GO:0045389      positive regulation of interleukin-20 biosynthetic process
+GO:0045388      negative regulation of interleukin-20 biosynthetic process
+GO:0036392      chemokine (C-C motif) ligand 20 production
+GO:0032704      negative regulation of interleukin-20 production
+GO:0032744      positive regulation of interleukin-20 production
+GO:0097258      20-hydroxy-leukotriene B4 omega oxidase activity
+GO:0052635      C-20 gibberellin 2-beta-dioxygenase activity
+"GO:0102245      lupan-3beta,20-diol synthase activity"
+GO:1903885      negative regulation of chemokine (C-C motif) ligand 20 production
+GO:1903886      positive regulation of chemokine (C-C motif) ligand 20 production
+GO:1903884      regulation of chemokine (C-C motif) ligand 20 production
+"GO:1900579      (17Z)-protosta-17(20),24-dien-3beta-ol metabolic process"
+"GO:1900580      (17Z)-protosta-17(20),24-dien-3beta-ol catabolic process"
+"GO:1900581      (17Z)-protosta-17(20),24-dien-3beta-ol biosynthetic process"
+"GO:1901947      5alpha,9alpha,10beta-labda-8(20),13-dien-15-yl diphosphate metabolic process"
+"GO:1901949      5alpha,9alpha,10beta-labda-8(20),13-dien-15-yl diphosphate biosynthetic process"
+"GO:1901948      5alpha,9alpha,10beta-labda-8(20),13-dien-15-yl diphosphate catabolic process"
+"GO:0047006      17-alpha,20-alpha-dihydroxypregn-4-en-3-one dehydrogenase activity"
+GO:0036203      taxoid 14-beta-hydroxylase activity
+GO:0050638      taxadien-5-alpha-ol O-acetyltransferase activity
+GO:0050598      taxane 13-alpha-hydroxylase activity
+GO:0005641      nuclear envelope lumen
+GO:0004110      corticosteroid side-chain-isomerase activity
+GO:0035274      diphenyl phthalate binding
+GO:0050597      taxane 10-beta-hydroxylase activity
+GO:0035574      histone H4-K20 demethylation
+GO:0009311      oligosaccharide metabolic process
+GO:0009420      bacterial-type flagellum filament
+GO:0033704      3beta-hydroxy-5alpha-steroid dehydrogenase activity
+GO:0033703      3beta-hydroxy-5beta-steroid dehydrogenase activity
+GO:0102353      multiradiene synthase activity
+GO:0034773      histone H4-K20 trimethylation
+GO:0034772      histone H4-K20 dimethylation
+GO:0034771      histone H4-K20 monomethylation
+GO:0042799      histone methyltransferase activity (H4-K20 specific)
+GO:0035575      histone demethylase activity (H4-K20 specific)
+GO:0052869      arachidonic acid omega-hydroxylase activity
+GO:0070918      production of small RNA involved in gene silencing by RNA
+GO:0042382      paraspeckles
+GO:0070512      positive regulation of histone H4-K20 methylation
+GO:0070510      regulation of histone H4-K20 methylation
+GO:0070492      oligosaccharide binding
+GO:0030046      parallel actin filament bundle assembly
+GO:0004661      protein geranylgeranyltransferase activity
+GO:1990889      H4K20me3 modified histone binding
+GO:0031050      dsRNA processing
+GO:0009312      oligosaccharide biosynthetic process
+GO:0009313      oligosaccharide catabolic process
+GO:0016607      nuclear speck
+GO:0097518      parallel actin filament bundle
+GO:0097414      classical Lewy body
+GO:0050604      taxadiene 5-alpha-hydroxylase activity
+GO:0051691      cellular oligosaccharide metabolic process
+GO:0051502      diterpene phytoalexin biosynthetic process
+GO:1990029      vasomotion
+GO:0035078      induction of programmed cell death by ecdysone
+GO:0034770      histone H4-K20 methylation
+GO:0016707      gibberellin 3-beta-dioxygenase activity
+GO:0043818      precorrin-3B synthase activity
+GO:0047086      ketosteroid monooxygenase activity
+GO:0009275      Gram-positive-bacterium-type cell wall
+GO:0008386      cholesterol monooxygenase (side-chain-cleaving) activity
+GO:0098788      dendritic knob
+GO:0070012      oligopeptidase activity
+GO:0019369      arachidonic acid metabolic process
+GO:0044461      bacterial-type flagellum part
+"GO:0030084      PSI associated light-harvesting complex I, LHCIb subcomplex"
+GO:0030257      type III protein secretion system complex
+GO:0070511      negative regulation of histone H4-K20 methylation
+"GO:0098017      viral capsid, major subunit"
+"GO:0098018      viral capsid, minor subunit"
+GO:0005635      nuclear envelope
+GO:0035672      oligopeptide transmembrane transport
+GO:0035673      oligopeptide transmembrane transporter activity
+GO:0016443      bidentate ribonuclease III activity
+GO:0044199      host cell nuclear envelope
+GO:0010207      photosystem II assembly
+GO:0039617      T=3 icosahedral viral capsid
+GO:0050544      arachidonic acid binding
+GO:0051692      cellular oligosaccharide catabolic process
+GO:0090374      oligopeptide export from mitochondrion
+GO:1990040      sub-surface cisterna
+GO:0035100      ecdysone binding
+GO:0035077      ecdysone-mediated polytene chromosome puffing
+GO:0005518      collagen binding
+GO:0030169      low-density lipoprotein particle binding
+GO:0032963      collagen metabolic process
+GO:0032964      collagen biosynthetic process
+GO:0034361      very-low-density lipoprotein particle
+GO:0044176      host cell filopodium
+GO:0019030      icosahedral viral capsid
+GO:0039618      T=pseudo3 icosahedral viral capsid
+GO:0051501      diterpene phytoalexin metabolic process
+GO:0075526      cap snatching
+GO:0090088      regulation of oligopeptide transport
+GO:0001745      compound eye morphogenesis
+GO:0015772      oligosaccharide transport
+GO:0006857      oligopeptide transport
+GO:0034189      very-low-density lipoprotein particle binding
+GO:0015334      high-affinity oligopeptide transmembrane transporter activity
+GO:0043781      cobalt-factor II C20-methyltransferase activity
+"GO:0047044      androstan-3-alpha,17-beta-diol dehydrogenase activity"
+GO:0030119      AP-type membrane coat adaptor complex
+GO:0022894      Intermediate conductance calcium-activated potassium channel activity
+GO:0034362      low-density lipoprotein particle
+GO:0016286      small conductance calcium-activated potassium channel activity
+GO:0035061      interchromatin granule
+GO:0034709      methylosome
+GO:0047442      17-alpha-hydroxyprogesterone aldolase activity
+"GO:0047024      5alpha-androstane-3beta,17beta-diol dehydrogenase activity"
+GO:0004508      steroid 17-alpha-monooxygenase activity

@@ -1,0 +1,35 @@
+GO:0035483      gastric emptying
+GO:0035482      gastric motility
+GO:0120060      regulation of gastric emptying
+GO:1990768      gastric mucosal blood circulation
+GO:0001696      gastric acid secretion
+GO:1905333      regulation of gastric motility
+GO:0120061      negative regulation of gastric emptying
+GO:0120062      positive regulation of gastric emptying
+GO:0016519      gastric inhibitory peptide receptor activity
+GO:0038192      gastric inhibitory peptide signaling pathway
+GO:0001699      acetylcholine-induced gastric acid secretion
+GO:0001698      gastrin-induced gastric acid secretion
+GO:0001697      histamine-induced gastric acid secretion
+GO:0031767      gastric inhibitory polypeptide receptor binding
+GO:0060453      regulation of gastric acid secretion
+GO:1904344      regulation of gastric mucosal blood circulation
+GO:1904345      negative regulation of gastric mucosal blood circulation
+GO:1904346      positive regulation of gastric mucosal blood circulation
+GO:1903639      regulation of gastrin-induced gastric acid secretion
+GO:0060455      negative regulation of gastric acid secretion
+GO:0060454      positive regulation of gastric acid secretion
+GO:1903640      negative regulation of gastrin-induced gastric acid secretion
+GO:1903641      positive regulation of gastrin-induced gastric acid secretion
+GO:0061102      stomach neuroendocrine cell differentiation
+GO:0120063      stomach smooth muscle contraction
+GO:0046581      intercellular canaliculus
+GO:0008900      potassium:proton exchanging ATPase activity
+GO:1904453      positive regulation of potassium:proton exchanging ATPase activity
+GO:1904452      negative regulation of potassium:proton exchanging ATPase activity
+GO:0120064      stomach pylorus smooth muscle contraction
+GO:0120065      pyloric antrum smooth muscle contraction
+GO:0120066      pyloric canal smooth muscle contraction
+GO:0120067      pyloric sphincter smooth muscle contraction
+GO:1904451      regulation of potassium:proton exchanging ATPase activity
+GO:0046691      intracellular canaliculus

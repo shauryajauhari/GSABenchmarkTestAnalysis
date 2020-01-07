@@ -1,0 +1,9 @@
+GO:0042982      amyloid precursor protein metabolic process
+GO:0042983      amyloid precursor protein biosynthetic process
+GO:0042987      amyloid precursor protein catabolic process
+GO:0050435      amyloid-beta metabolic process
+GO:0048156      tau protein binding
+GO:0044548      S100 protein binding
+GO:0048153      S100 alpha biosynthetic process
+GO:0048152      S100 beta biosynthetic process
+GO:0106003      amyloid-beta complex

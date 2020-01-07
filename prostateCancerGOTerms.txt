@@ -1,0 +1,39 @@
+GO:0060514      prostate induction
+GO:0030850      prostate gland development
+GO:0060526      prostate glandular acinus morphogenesis
+GO:0060525      prostate glandular acinus development
+GO:0060523      prostate epithelial cord elongation
+GO:0060515      prostate field specification
+GO:0060512      prostate gland morphogenesis
+GO:0060741      prostate gland stromal morphogenesis
+GO:0060740      prostate gland epithelium morphogenesis
+GO:0060737      prostate gland morphogenetic growth
+GO:0060736      prostate gland growth
+GO:0060527      prostate epithelial cord arborization involved in prostate glandular acinus morphogenesis
+GO:0060442      branching involved in prostate gland morphogenesis
+GO:0044345      stromal-epithelial cell signaling involved in prostate gland development
+GO:0060531      neuroendocrine cell differentiation involved in prostate gland acinus development
+GO:0060530      smooth muscle cell differentiation involved in prostate glandular acinus development
+GO:0060524      dichotomous subdivision of prostate epithelial cord terminal unit
+GO:0060521      mesenchymal-epithelial cell signaling involved in prostate induction
+GO:0060520      activation of prostate induction by androgen receptor signaling pathway
+GO:0060768      regulation of epithelial cell proliferation involved in prostate gland development
+GO:0060767      epithelial cell proliferation involved in prostate gland development
+GO:0060782      regulation of mesenchymal cell proliferation involved in prostate gland development
+GO:0060781      mesenchymal cell proliferation involved in prostate gland development
+GO:0060783      mesenchymal smoothened signaling pathway involved in prostate gland development
+GO:0060743      epithelial cell maturation involved in prostate gland development
+GO:0060742      epithelial cell differentiation involved in prostate gland development
+GO:0060739      mesenchymal-epithelial cell signaling involved in prostate gland development
+GO:0060738      epithelial-mesenchymal signaling involved in prostate gland development
+GO:0060687      regulation of branching involved in prostate gland morphogenesis
+GO:0060529      squamous basal epithelial stem cell differentiation involved in prostate gland acinus development
+GO:0060528      secretory columnal luminar epithelial cell differentiation involved in prostate glandular acinus development
+GO:0060770      negative regulation of epithelial cell proliferation involved in prostate gland development
+GO:0060769      positive regulation of epithelial cell proliferation involved in prostate gland development
+GO:0060513      prostatic bud formation
+GO:0060516      primary prostatic bud elongation
+GO:0036029      protein C inhibitor-KLK3 complex
+GO:0060686      negative regulation of prostatic bud formation
+GO:0060685      regulation of prostatic bud formation
+GO:0035260      internal genitalia morphogenesis
