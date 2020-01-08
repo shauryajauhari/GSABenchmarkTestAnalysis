@@ -48,16 +48,19 @@ calculateSensitivitySpecificityPrecision <- function(tool)
   ## Precision
   forPrecision <- as.data.frame(forPrecision) 
   colnames(forPrecision) <- diseasePools
+  forPrecision$Median <- apply(forPrecision,1,median)
   forPrecision$Samples <- ChIPSeqSamples 
 
   ##Sensitivity
   forSensitivity <- as.data.frame(forSensitivity) 
   colnames(forPrecision) <- diseasePools
+  forSensitivity$Median <- apply(forSensitivity,1,median)
   forSensitivity$Samples <- ChIPSeqSamples 
 
   ##Specificity
   forSpecificity <- as.data.frame(forSpecificity) 
   colnames(forSpecificity) <- diseasePools
+  forSpecificity$Median <- apply(forSpecificity,1,median)
   forSpecificity$Samples <- ChIPSeqSamples
 
   ## Let's return a list for convenience; a list of dataframes.

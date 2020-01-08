@@ -31,6 +31,7 @@ calculatePrioritization <- function(tool){
   
   forPrioritization <- as.data.frame(forPrioritization) # transform to a dataframe
   colnames(forPrioritization) <- diseasePools
+  forPrioritization$Median <- apply(forPrioritization,1,median) # median value shall be the basis of plotting the results.
   forPrioritization$Samples <- ChIPSeqSamples # add key attribute of sample names. this may be helpful for the purpose of joining dataframes.
   return(forPrioritization)
 }
