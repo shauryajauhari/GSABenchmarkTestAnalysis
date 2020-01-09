@@ -1,67 +1,75 @@
 calculateSensitivitySpecificityPrecision <- function(tool)
   
 {
-  forPrioritization <- vector("list", length(disease_pools))
-  forSensitivity <- vector("list", length(disease_pools)) 
-  forSpecificity <- vector("list", length(disease_pools)) 
+  forPrioritization <- vector("list", length(ChIPSeqSamples))
+  forSensitivity <- vector("list", length(ChIPSeqSamples)) 
+  forSpecificity <- vector("list", length(ChIPSeqSamples)) 
 
   ## Classical Sensitivity, Specificity, Precision
   
-  for (d in 1:length(disease_pools))
+  for (sam in 1:length(ChIPSeqSamples))
   {
-    for (sam in 1:length(ChIPSeqSamples))
+    for (dis in 1:length(diseasePools))
     {
-      true_positives <- list()
-      true_negatives_ids <- list()
-      false_positives1_ids <- list()
-      false_positives2_ids <- list()
-      false_positives <- list()
-      false_negatives <- list()
+      truePositives <- list()
+      trueNegativesIDs <- list()
+      falsePositives1IDs <- list()
+      falsePositives2IDs <- list()
+      falsePositives <- list()
+      falseNegatives <- list()
     
     ## Tool results' subsets on the basis of statistical significance.
-    greater_than_0.05 <- eval(parse(text=(paste0(paste0(tools_results[tool],"$"), ChIPSeqSamples[sam]))))[which(eval(parse(text=(paste0(paste0(tools_results[tool],"$"), ChIPSeqSamples[sam]))))[2] > 0.05),]
-    less_than_0.05 <- eval(parse(text=(paste0(paste0(tools_results[tool],"$"), ChIPSeqSamples[sam]))))[which(eval(parse(text=(paste0(paste0(tools_results[tool],"$"), ChIPSeqSamples[sam]))))[2] <= 0.05),]
-    true_negatives_ids <- setdiff(greater_than_0.05[[1]], eval(parse(text=disease_pools[d]))) ## All ids that are there in the tool result with p > 0.05 and absent in the disease pool.
+    greaterThan0.05 <- eval(parse(text=(paste0(paste0(toolsResults[tool],"$"), ChIPSeqSamples[sam]))))[which(eval(parse(text=(paste0(paste0(toolsResults[tool],"$"), ChIPSeqSamples[sam]))))[2] > 0.05),]
+    lessThan0.05 <- eval(parse(text=(paste0(paste0(toolsResults[tool],"$"), ChIPSeqSamples[sam]))))[which(eval(parse(text=(paste0(paste0(toolsResults[tool],"$"), ChIPSeqSamples[sam]))))[2] <= 0.05),]
+    trueNegativesIDs <- setdiff(greaterThan0.05[[1]], eval(parse(text=diseasePools[dis]))) ## All ids that are there in the tool result with p > 0.05 and absent in the disease pool.
     
-    false_positives1_ids <- intersect(eval(parse(text=disease_pools[d])),greater_than_0.05[[1]])
-    false_positives2_ids <- setdiff(less_than_0.05[[1]],eval(parse(text=disease_pools[d])))
+    falsePositives1IDs <- intersect(eval(parse(text=diseasePools[d])),greaterThan0.05[[1]])
+    falsePositives2IDs <- setdiff(lessThan0.05[[1]],eval(parse(text=diseasePools[dis])))
     
-    false_positives <- c(false_positives1_ids,false_positives2_ids)
-    true_positives <- intersect(less_than_0.05[[1]], eval(parse(text=disease_pools[d])))
-    false_negatives <- intersect(greater_than_0.05[[1]], eval(parse(text=disease_pools[d])))
+    falsePositives <- c(falsePositives1IDs,falsePositives2IDs)
+    truePositives <- intersect(lessThan0.05[[1]], eval(parse(text=diseasePools[dis])))
+    falseNegatives <- intersect(greaterThan0.05[[1]], eval(parse(text=diseasePools[dis])))
     
     ## Results
-    library(tidyverse)
     
-    precision <- length(true_positives)/(length(true_positives)+length(false_positives))
-    sensitivity <- length(true_positives)/(length(true_positives)+length(false_negatives))
-    specificity <- length(true_negatives_ids)/(length(true_negatives_ids)+length(false_positives))
+    precision <- length(truePositives)/(length(truePositives)+length(falsePositives))
+    sensitivity <- length(truePositives)/(length(truePositives)+length(falseNegatives))
+    specificity <- length(trueNegativesIDs)/(length(trueNegativesIDs)+length(falsePositives))
 
     # Store results
-    forPrecision[[d]][[sam]] <- precision
-    forSensitivity[[d]][[sam]] <- sensitivity
-    forSpecificity[[d]][[sam]] <- specificity
+    forPrecision[[sam]][dis] <- precision
+    forSensitivity[[sam]][dis] <- sensitivity
+    forSpecificity[[sam]][dis] <- specificity
 
     }
 
   } 
   ## Precision
-  forPrecision <- as.data.frame(forPrecision) 
+  forPrecision <- as.data.frame(forPrecision)
+  forPrecision <- as.data.frame(t(forPrecision))
+  row.names(forPrecision) <- NULL
   colnames(forPrecision) <- diseasePools
   forPrecision$Median <- apply(forPrecision,1,median)
-  forPrecision$Samples <- ChIPSeqSamples 
+  forPrecision$Samples <- ChIPSeqSamples
+  return(forPrecision)
 
   ##Sensitivity
-  forSensitivity <- as.data.frame(forSensitivity) 
-  colnames(forPrecision) <- diseasePools
+  forSensitivity <- as.data.frame(forSensitivity)
+  forSensitivity <- as.data.frame(t(forSensitivity))
+  row.names(forSensitivity) <- NULL
+  colnames(forSensitivity) <- diseasePools
   forSensitivity$Median <- apply(forSensitivity,1,median)
-  forSensitivity$Samples <- ChIPSeqSamples 
+  forSensitivity$Samples <- ChIPSeqSamples
+  return(forSensitivity)
 
   ##Specificity
-  forSpecificity <- as.data.frame(forSpecificity) 
+  forSpecificity <- as.data.frame(forSpecificity)
+  forSpecificity <- as.data.frame(t(forSpecificity))
+  row.names(forSpecificity) <- NULL
   colnames(forSpecificity) <- diseasePools
   forSpecificity$Median <- apply(forSpecificity,1,median)
   forSpecificity$Samples <- ChIPSeqSamples
+  return(forSpecificity)
 
   ## Let's return a list for convenience; a list of dataframes.
   masterReturn <- list(forSensitivity, forSpecificity, forPrecision)
