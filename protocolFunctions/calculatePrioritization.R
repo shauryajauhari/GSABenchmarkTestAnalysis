@@ -6,26 +6,28 @@ calculatePrioritization <- function(tool){
   
   for (sam in 1:length(ChIPSeqSamples))
   {
-    for (dis in 1:length(diseasePools))
+    for (dis in 1:length(disease_pools))
     {
+      tryCatch({
       ranks <- list()
       x <- 1
-      tryCatch({for (i in 1:length(eval(parse(text=(paste0(paste0(toolsResults[tool],"$"), ChIPSeqSamples[sam]))))[[1]]))
-      {
-        for (j in (eval(parse(text=diseasePools[[dis]]))))
+      for (i in 1:length(eval(parse(text=(paste0(paste0(tools_results[3],"$"), ChIPSeqSamples[sam]))))[[1]]))
         {
-          if((eval(parse(text=(paste0(paste0(toolsResults[tool],"$"), ChIPSeqSamples[sam]))))[[1]])[[i]] == j)
+          for (j in (eval(parse(text=disease_pools[[dis]]))))
           {
-            ranks[[x]]<- i
-            x <- x+1
+            if((eval(parse(text=(paste0(paste0(tools_results[3],"$"), ChIPSeqSamples[sam]))))[[1]])[[i]] == j)
+            {
+              ranks[[x]]<- i
+              x <- x+1
+            }
           }
         }
-      }
+        findPrioritization <- as.double((ranks[[1]]/nrow((eval(parse(text=(paste0(paste0(tools_results[3],"$"), 
+                                                                                  ChIPSeqSamples[sam]))))[1]))*100))
+        forPrioritization[[sam]][dis] <- findPrioritization
+      }, error = function(e){}
+      , finally = {dis=dis+1}) ## The exception handling moves the pointer to the next index if 'ranks' is empty.
     }
-    , finally={findPrioritization <- as.double((ranks[[1]]/nrow((eval(parse(text=(paste0(paste0(toolsResults[tool],"$"), 
-                                                                                         ChIPSeqSamples[sam]))))[1]))*100))
-    forPrioritization[[sam]][dis] <- findPrioritization}) 
-      }
   }
   ## Owing to the discrepnacies in the calculation of prioritization for different samples (intersections may vary), the resultant list of
   ## lists(results) may have different length components. To ensure fullness of the dataframe we shall calculate the maximum length amongst
