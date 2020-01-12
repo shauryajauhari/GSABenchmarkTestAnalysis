@@ -6,23 +6,23 @@ calculatePrioritization <- function(tool){
   
   for (sam in 1:length(ChIPSeqSamples))
   {
-    for (dis in 1:length(disease_pools))
+    for (dis in 1:length(diseasePools))
     {
       tryCatch({
       ranks <- list()
       x <- 1
-      for (i in 1:length(eval(parse(text=(paste0(paste0(tools_results[3],"$"), ChIPSeqSamples[sam]))))[[1]]))
+      for (i in 1:length(eval(parse(text=(paste0(paste0(toolsResults[tool],"$"), ChIPSeqSamples[sam]))))[[1]]))
         {
-          for (j in (eval(parse(text=disease_pools[[dis]]))))
+          for (j in (eval(parse(text=diseasePools[[dis]]))))
           {
-            if((eval(parse(text=(paste0(paste0(tools_results[3],"$"), ChIPSeqSamples[sam]))))[[1]])[[i]] == j)
+            if((eval(parse(text=(paste0(paste0(toolsResults[tool],"$"), ChIPSeqSamples[sam]))))[[1]])[[i]] == j)
             {
               ranks[[x]]<- i
               x <- x+1
             }
           }
         }
-        findPrioritization <- as.double((ranks[[1]]/nrow((eval(parse(text=(paste0(paste0(tools_results[3],"$"), 
+        findPrioritization <- as.double((ranks[[1]]/nrow((eval(parse(text=(paste0(paste0(toolsResults[tool],"$"), 
                                                                                   ChIPSeqSamples[sam]))))[1]))*100))
         forPrioritization[[sam]][dis] <- findPrioritization
       }, error = function(e){}
