@@ -34,7 +34,7 @@ calculatePrioritization <- function(tool){
   ## all (that should technically be the number of diseases), and structure the shorter lists to fit the dimensions of the dataframe by 
   ## explicit zeros. 
 
-return(forPrioritization)
+return(listToFrame(forPrioritization))
 }
 
 ## (For GREAT) Note that in the resultant table, the zero entries reflect that there are no matches between the disease terms and the tool 
