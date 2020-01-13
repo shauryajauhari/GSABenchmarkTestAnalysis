@@ -8,9 +8,9 @@ listToFrame <- function(listLists)
   healMe <-  function(x) {
     for(ind in 1: length(x))
     {
-      if(length(x[[ind]]) < length(disease_pools))
+      if(length(x[[ind]]) < length(diseasePools))
       {
-        x[[ind]] <- append(x[[ind]], rep(as.numeric(NA), times = (length(disease_pools)-length(x[[ind]]))))
+        x[[ind]] <- append(x[[ind]], rep(as.numeric(NA), times = (length(diseasePools)-length(x[[ind]]))))
       }
     }
     return(x)}
@@ -24,7 +24,7 @@ listToFrame <- function(listLists)
   finalFrame <- as.data.frame(listLists) # transform to a dataframe
   finalFrame <- as.data.frame(t(finalFrame)) # transpose the data frame as the output from the function is a list
   row.names(finalFrame) <- NULL
-  colnames(finalFrame) <- disease_pools
+  colnames(finalFrame) <- diseasePools
   finalFrame$Median <- apply(finalFrame, 1, median) # median value shall be the basis of plotting the results.
   finalFrame$Samples <- ChIPSeqSamples # add key attribute of sample names. this may be helpful for the purpose of joining dataframes.
   finalFrame[is.na(finalFrame)] <- 0 ## replacing NAs with zero for lists shorther than the maximum length.
