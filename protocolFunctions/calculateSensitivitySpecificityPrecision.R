@@ -1,6 +1,6 @@
 calculateSensitivitySpecificityPrecision <- function(tool)
   {
-  forPrioritization <- vector("list", length(ChIPSeqSamples))
+  forPrecision <- vector("list", length(ChIPSeqSamples))
   forSensitivity <- vector("list", length(ChIPSeqSamples)) 
   forSpecificity <- vector("list", length(ChIPSeqSamples)) 
 
