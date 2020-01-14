@@ -22,7 +22,7 @@ calculateSensitivitySpecificityPrecision <- function(tool)
     lessThan0.05 <- eval(parse(text=(paste0(paste0(toolsResults[tool],"$"), ChIPSeqSamples[sam]))))[which(eval(parse(text=(paste0(paste0(toolsResults[tool],"$"), ChIPSeqSamples[sam]))))[2] <= 0.05),]
     trueNegativesIDs <- setdiff(greaterThan0.05[[1]], eval(parse(text=diseasePools[dis]))) ## All ids that are there in the tool result with p > 0.05 and absent in the disease pool.
     
-    falsePositives1IDs <- intersect(eval(parse(text=diseasePools[d])),greaterThan0.05[[1]])
+    falsePositives1IDs <- intersect(eval(parse(text=diseasePools[dis])),greaterThan0.05[[1]])
     falsePositives2IDs <- setdiff(lessThan0.05[[1]],eval(parse(text=diseasePools[dis])))
     
     falsePositives <- c(falsePositives1IDs,falsePositives2IDs)
