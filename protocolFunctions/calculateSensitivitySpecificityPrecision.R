@@ -1,6 +1,5 @@
 calculateSensitivitySpecificityPrecision <- function(tool)
-  
-{
+  {
   forPrioritization <- vector("list", length(ChIPSeqSamples))
   forSensitivity <- vector("list", length(ChIPSeqSamples)) 
   forSpecificity <- vector("list", length(ChIPSeqSamples)) 
@@ -42,37 +41,9 @@ calculateSensitivitySpecificityPrecision <- function(tool)
     forSpecificity[[sam]][dis] <- specificity
 
     }
-
   } 
-  ## Precision
-  forPrecision <- as.data.frame(forPrecision)
-  forPrecision <- as.data.frame(t(forPrecision))
-  row.names(forPrecision) <- NULL
-  colnames(forPrecision) <- diseasePools
-  forPrecision$Median <- apply(forPrecision,1,median)
-  forPrecision$Samples <- ChIPSeqSamples
-  return(forPrecision)
-
-  ##Sensitivity
-  forSensitivity <- as.data.frame(forSensitivity)
-  forSensitivity <- as.data.frame(t(forSensitivity))
-  row.names(forSensitivity) <- NULL
-  colnames(forSensitivity) <- diseasePools
-  forSensitivity$Median <- apply(forSensitivity,1,median)
-  forSensitivity$Samples <- ChIPSeqSamples
-  return(forSensitivity)
-
-  ##Specificity
-  forSpecificity <- as.data.frame(forSpecificity)
-  forSpecificity <- as.data.frame(t(forSpecificity))
-  row.names(forSpecificity) <- NULL
-  colnames(forSpecificity) <- diseasePools
-  forSpecificity$Median <- apply(forSpecificity,1,median)
-  forSpecificity$Samples <- ChIPSeqSamples
-  return(forSpecificity)
-
+  
   ## Let's return a list for convenience; a list of dataframes.
-  masterReturn <- list(forSensitivity, forSpecificity, forPrecision)
+  masterReturn <- list(listToFrame(forSensitivity), listToFrame(forSpecificity), listToFrame(forPrecision))
   return(masterReturn)
-
 }
