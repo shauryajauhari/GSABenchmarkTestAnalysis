@@ -47,6 +47,7 @@ for(i in 1:length(lengthBreakups)) # 10
         simulatedAllSamples[[i]][[j]] <- anti_join(allSamples[[i]],childTracks[[i]][[j]])
       }
 }
+names(simulatedAllSamples) <- ChIPSeqSamples
 return(simulatedAllSamples)
 }
 
