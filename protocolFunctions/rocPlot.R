@@ -11,7 +11,7 @@ rocPlot <- function()
   lines(1-plotSpecificity[order(plotSpecificity$seq2pathwayResultsShredded),][,3], plotSensitivity[order(plotSensitivity$seq2pathwayResultsShredded),][,3], type="b", col=c("magenta"))
   lines(1-plotSpecificity[order(plotSpecificity$greatResultsShredded),][,5], plotSensitivity[order(plotSensitivity$greatResultsShredded),][,5], type="b", col=c("lightpink"))
   
-  legend(-95, 70, legend=c("CHIPENRICH", "BROADENRICH", "ENRICHR", "SEQ2PATHWAY", "GREAT"),
+  legend(0.06, 0.65, legend=c("CHIPENRICH", "BROADENRICH", "ENRICHR", "SEQ2PATHWAY", "GREAT"),
          col=c("red", "green", "blue", "magenta", "lightpink"), lty=1, cex=0.8, box.lty=0)
 }
 
