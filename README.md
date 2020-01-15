@@ -15,3 +15,9 @@ library(GSAChIPSeqGold)
 However, this test case dataset has the following profile.
 
 ![test data screenshot](testData.png)
+
+P.S. Note that the jupyter notebook might run into execution errors due to larger memory dependencies. It is advisable to run the notebook with an increased *iopub data rate*. 
+
+```
+jupyter notebook --NotebookApp.iopub_data_rate_limit=10000000000
+```
