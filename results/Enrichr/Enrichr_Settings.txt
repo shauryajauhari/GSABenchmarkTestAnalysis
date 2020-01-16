@@ -1,2 +1,2 @@
 Max_genes = 1000
-Genome = hg38
+Genome = hg19
