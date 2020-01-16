@@ -22,7 +22,7 @@ dataImportClean <- function(loc){
       colnames(samplesInBED[[i]]) <- c("chrom", "start", "end")
       samplesInBED[[i]] <- samplesInBED[[i]][order(samplesInBED[[i]]$chrom),]
       samplesInBED[[i]] <- GRanges(seqnames = samplesInBED[[i]]$chrom, ranges = IRanges(samplesInBED[[i]]$`start`, samplesInBED[[i]]$`end`))
-      genome(samplesInBED[[i]]) <- "hg38"
+      genome(samplesInBED[[i]]) <- "hg19"
     }
     
     ## Saving BED files as GRanges objects ##
