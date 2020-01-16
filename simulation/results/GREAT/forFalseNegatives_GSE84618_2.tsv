@@ -1,0 +1,10 @@
+Term Name 	 Binom Rank 	 Binom Raw P-Value 	  Binom FDR Q-Val  	 Binom Fold Enrichment 	 Binom Observed Region Hits 	 Binom Region Set Coverage 	 Hyper Rank 	  Hyper FDR Q-Val  	 Hyper Fold Enrichment 	 Hyper Observed Gene Hits 	 Hyper Total Genes 	 Hyper Gene Set Coverage
+nuclear envelope organization	86	2.80E-10	4.28E-08	2.014914	98	0.01251437	861	0.049898939	1.361409	49	86	0.006311993
+regulation of mitochondrial outer membrane permeabilization involved in apoptotic signaling pathway	147	4.25E-08	3.79769E-06	2.16426	62	0.007917252	584	0.009235738	1.610255	31	46	0.003993302
+keratan sulfate biosynthetic process	232	1.77689E-06	0.000100678	2.273162	42	0.0053633	841	0.045306079	1.64787	20	29	0.002576324
+corpus callosum development	258	3.15652E-06	0.000160823	2.54394	32	0.004086324	402	0.001502367	2.230117	14	15	0.001803427
+atrioventricular valve formation	959	0.001849322	0.025348632	2.518101	14	0.001787767	798	0.036986044	2.389411	7	7	0.000901713
+regulation of podosome assembly	978	0.002008417	0.026994521	2.099652	20	0.002553952	684	0.018988452	2.048067	12	14	0.001545794
+podosome	79	8.10E-07	1.7707E-05	2.163306	50	0.006384881	103	0.014112837	1.730263	21	29	0.00270514
+tetraspanin-enriched microdomain	103	2.94933E-05	0.000494228	3.619403	15	0.001915464	124	0.031253545	2.389411	7	7	0.000901713
+L-type voltage-gated calcium channel complex	206	0.001376402	0.011532378	2.08228	22	0.002809347	124	0.031253545	2.389411	7	7	0.000901713
