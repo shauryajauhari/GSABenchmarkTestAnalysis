@@ -37,7 +37,9 @@ seq2pathwayResults <- readRDS("./results/Seq2pathway/seq2pathwayResults")
 
 for (i in 1:length(seq2pathwayResults))
 {
-  seq2pathwayResultsShredded[[i]] <- seq2pathwayResults[[i]][[i]]$gene2pathway_result.FET$GO_BP[,c(1,3)]  
+  seq2pathwayResultsShredded[[i]] <- rbind(seq2pathwayResults[[i]][[i]]$gene2pathway_result.FET$GO_BP[,c(1,3)],
+                                           seq2pathwayResults[[i]][[i]]$gene2pathway_result.FET$GO_CC[,c(1,3)],
+                                           seq2pathwayResults[[i]][[i]]$gene2pathway_result.FET$GO_MF[,c(1,3)])
 }
 names(seq2pathwayResultsShredded)<- as.character(ChIPSeqSamples)
 saveRDS(seq2pathwayResultsShredded, file = "./results/Seq2pathway/seq2pathwayResultsShredded")
