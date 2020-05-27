@@ -13,22 +13,22 @@ library(stringr)
 
 for (i in 1:length(enrichrGOBPResultsShredded))
 {
-  enrichrGOBPResultsShredded[[i]]$Term <- str_extract(string = print(eval(parse(text=paste0("enrichrGOBPResultsShredded$",paste0(eval(parse(text="names(enrichrGOBPResultsShredded)[i]")),"$Term"))))), pattern = "GO:[0-9]+")
+  enrichrGOBPResultsShredded[[i]]$Term <- str_extract(string = eval(parse(text=paste0("enrichrGOBPResultsShredded$",paste0(eval(parse(text="names(enrichrGOBPResultsShredded)[i]")),"$Term")))), pattern = "GO:[0-9]+")
 }
 
 for (i in 1:length(enrichrGOCCResultsShredded))
 {
-  enrichrGOCCResultsShredded[[i]]$Term <- str_extract(string = print(eval(parse(text=paste0("enrichrGOCCResultsShredded$",paste0(eval(parse(text="names(enrichrGOCCResultsShredded)[i]")),"$Term"))))), pattern = "GO:[0-9]+")
+  enrichrGOCCResultsShredded[[i]]$Term <- str_extract(string = eval(parse(text=paste0("enrichrGOCCResultsShredded$",paste0(eval(parse(text="names(enrichrGOCCResultsShredded)[i]")),"$Term")))), pattern = "GO:[0-9]+")
 }
 
 for (i in 1:length(enrichrGOMFResultsShredded))
 {
-  enrichrGOMFResultsShredded[[i]]$Term <- str_extract(string = print(eval(parse(text=paste0("enrichrGOMFResultsShredded$",paste0(eval(parse(text="names(enrichrGOMFResultsShredded)[i]")),"$Term"))))), pattern = "GO:[0-9]+")
+  enrichrGOMFResultsShredded[[i]]$Term <- str_extract(string = eval(parse(text=paste0("enrichrGOMFResultsShredded$",paste0(eval(parse(text="names(enrichrGOMFResultsShredded)[i]")),"$Term")))), pattern = "GO:[0-9]+")
 }
 
 for (i in 1:length(enrichrKEGGResultsShredded))
 {
-  enrichrKEGGResultsShredded[[i]]$Term <- str_extract(string = print(eval(parse(text=paste0("enrichrKEGGResultsShredded$",paste0(eval(parse(text="names(enrichrKEGGResultsShredded)[i]")),"$Term"))))), pattern = "hsa[0-9]+")
+  enrichrKEGGResultsShredded[[i]]$Term <- str_extract(string = eval(parse(text=paste0("enrichrKEGGResultsShredded$",paste0(eval(parse(text="names(enrichrKEGGResultsShredded)[i]")),"$Term")))), pattern = "hsa[0-9]+")
 }
 
 
