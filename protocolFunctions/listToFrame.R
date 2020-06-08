@@ -50,8 +50,6 @@ listToFrame <- function(listLists)
   
   library(hash)
   sampleDiseaseDictionary <- hash(keys = summaryTable$GSM, values = summaryTable$AffiliateDiseasePool)
-  sampleDiseaseDictionary
-  
   
   ## return a column with the noted values for a particular sample against it's target pathway
   
