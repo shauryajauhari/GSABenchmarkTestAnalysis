@@ -55,7 +55,7 @@ listToFrame <- function(listLists)
   
   for (i in 1:length(ChIPSeqSamples))
   {
-    finalFrame$Value<- finalFrame[ChIPSeqSamples== ChIPSeqSamples[i], values(sampleDiseaseDictionary)[i]]
+    finalFrame$Value[i]<- finalFrame[ChIPSeqSamples== ChIPSeqSamples[i], values(sampleDiseaseDictionary)[i]]
   }
   
    finalFrame[is.na(finalFrame)] <- 0 ## replacing NAs with zero for lists shorther than the maximum length.
