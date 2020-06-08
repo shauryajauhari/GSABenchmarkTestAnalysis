@@ -25,8 +25,41 @@ listToFrame <- function(listLists)
   finalFrame <- as.data.frame(t(finalFrame)) # transpose the data frame as the output from the function is a list
   row.names(finalFrame) <- NULL
   colnames(finalFrame) <- diseasePools
-  finalFrame$Median <- apply(finalFrame, 1, median) # median value shall be the basis of plotting the results.
   finalFrame$Samples <- ChIPSeqSamples # add key attribute of sample names. this may be helpful for the purpose of joining dataframes.
-  finalFrame[is.na(finalFrame)] <- 0 ## replacing NAs with zero for lists shorther than the maximum length.
+  
+  ## loading data from master table
+  
+  summaryTable <- read.table("./GSAChIPSeqBenchmarkDatasetProfile.txt", sep = "\t", header = TRUE, quote = "")
+  summaryTable <- summaryTable[, c("GSM", "Disease...Target..Pathway")]
+  
+  
+  ## pre-process for making comparisons
+  
+  library(stringr)
+  summaryTable$Disease...Target..Pathway <- tolower(str_replace_all(string=summaryTable$Disease...Target..Pathway, pattern=" ", repl=""))
+  
+  
+  ## define column for matched terms that are lists for disease terms
+  summaryTable$AffiliateDiseasePool <- vector(mode = "list", length = nrow(summaryTable))
+  for (i in 1:nrow(summaryTable))
+  {
+    try(summaryTable$AffiliateDiseasePool[i] <- diseasePools[agrep(summaryTable$Disease...Target..Pathway[i], diseasePools)])
+  }
+  
+  ## define a dictionary to hold sample-target pathway association
+  
+  library(hash)
+  sampleDiseaseDictionary <- hash(keys = summaryTable$GSM, values = summaryTable$AffiliateDiseasePool)
+  sampleDiseaseDictionary
+  
+  
+  ## return a column with the noted values for a particular sample against it's target pathway
+  
+  for (i in 1:length(ChIPSeqSamples))
+  {
+    finalFrame$Value<- finalFrame[ChIPSeqSamples== ChIPSeqSamples[i], values(sampleDiseaseDictionary)[i]]
+  }
+  
+   finalFrame[is.na(finalFrame)] <- 0 ## replacing NAs with zero for lists shorther than the maximum length.
   return(finalFrame)
 }
